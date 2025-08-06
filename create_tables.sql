@@ -1,0 +1,21 @@
+CREATE TABLE Departments (
+    DeptID INT PRIMARY KEY IDENTITY(1,1),
+    DeptName VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Instructors (
+    InstructorID INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    DeptID INT,
+    FOREIGN KEY (DeptID) REFERENCES Departments(DeptID)
+);
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    DeptID INT,
+    AdmissionDate DATE NOT NULL,
+    FOREIGN KEY (DeptID) REFERENCES Departments(DeptID)
+);
