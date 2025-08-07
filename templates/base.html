@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College ERP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>College ERP</h1>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/add_student">Add Student</a> |
+        <a href="/students">View Students</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
